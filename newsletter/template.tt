@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Vim Weekly</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Gentium+Book+Basic|Leckerli+One|Abril+Fatface|Merriweather:400,900|Patua+One|Lato:300,400" rel="stylesheet" type="text/css">
+        
+    <style type="text/css">
+		body{
+			font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size:14px;
+			line-height:20px;
+			background-image:url('https://raw.github.com/tawrahim/vim_weekly/master/app/assets/images/backgrounds/tiny_grid.png');
+			color:#333333;
+			margin-top:50px;
+		}
+		.main{
+			width:700px;
+			margin-left:auto;
+			margin-right:auto;
+			border:1px solid #ddd;
+			border-radius:5px;
+			background-color:#fff;
+		}
+		h4{
+			font-size:17.5px;
+			margin:10px 0;
+			font-family:inherit;
+			font-weight:bold;
+			line-height:20px;
+			color:inherit;
+			text-rendering:optimizelegibility
+                display: block;
+			-webkit-margin-before:1.33em;
+			-webkit-margin-after:1.33em;
+			-webkit-margin-start:0px;
+			-webkit-margin-end:0px;
+		}
+		a{
+			color:#0088cc;
+			text-decoration:none;
+		}
+		.heading{
+			width:200px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.content{
+			padding-left:10px;
+		}
+		.footer{
+			border-top:1px solid #ddd;
+			background-color:#fcfcfc;
+			border-bottom-right-radius:5px;
+			border-bottom-left-radius:5px;
+			padding:25px 0px 20px;
+			clear:both;
+		}
+		#author{
+			float:right;
+			margin-right:8px;
+		}
+	@font-face {font-family: 'Abril Fatface';  font-style: normal;  font-weight: 400;  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://themes.googleusercontent.com/static/fonts/abrilfatface/v6/X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff) format('woff');}
+	@font-face {font-family: 'Gentium Book Basic';  font-style: normal;  font-weight: 400;  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(http://themes.googleusercontent.com/static/fonts/gentiumbookbasic/v4/IRFxB2matTxrjZt6a3FUnq6Rv-X66d7QWAwIQQ5u8Sc.woff) format('woff');}
+	@font-face {font-family: 'Lato';  font-style: normal;  font-weight: 300;  src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff) format('woff');}
+	@font-face {font-family: 'Lato';  font-style: normal;  font-weight: 400;  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');}
+	@font-face {font-family: 'Leckerli One';  font-style: normal;  font-weight: 400;  src: local('Leckerli One'), local('LeckerliOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/leckerlione/v5/S2Y_iLrItTu8kIJTkS7DrKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');}
+	@font-face {font-family: 'Merriweather';  font-style: normal;  font-weight: 400;  src: local('Merriweather'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/RFda8w1V0eDZheqfcyQ4EKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');}
+	@font-face {font-family: 'Merriweather';  font-style: normal;  font-weight: 900;  src: local('Merriweather Heavy'), local('Merriweather-Heavy'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/ZvcMqxEwPfh2qDWBPxn6nrsSoz0gOrwseB_671fuXgU.woff) format('woff');}
+	@font-face {font-family: 'Open Sans';  font-style: normal;  font-weight: 300;  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');}
+	@font-face {font-family: 'Open Sans';  font-style: normal;  font-weight: 400;  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');}
+	@font-face {font-family: 'Open Sans';  font-style: normal;  font-weight: 700;  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');}
+	@font-face {font-family: 'Patua One';  font-style: normal;  font-weight: 400;  src: local('Patua One'), local('PatuaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/patuaone/v4/yAXhog6uK3bd3OwBILv_SLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');}
+		.logo{
+			font-family:'Leckerli One', cursive;
+			font-size:42px;
+			line-height:46px;
+			text-align:center;
+			text-transform:none !important;
+		}
+</style></head>
+    <body style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 20px;background-image: url(https://raw.github.com/tawrahim/vim_weekly/master/app/assets/images/backgrounds/tiny_grid.png);color: #333333;margin-top: 50px;">
+        <div class="logo" style="font-family: 'Leckerli One', cursive;font-size: 42px;line-height: 46px;text-align: center;text-transform: none !important;">
+            <h1 id="logo">vim-weekly</h1>
+        </div>
+        <div class="main" style="width: 700px;margin-left: auto;margin-right: auto;border: 1px solid #ddd;border-radius: 5px;background-color: #fff;">
+            <div class="heading" style="width: 200px;margin-left: auto;margin-right: auto;">
+                <p>View Issue in browser</p>
+            </div>
+            <div class="content" style="padding-left: 10px;">
+                <h4 style="font-size: 17.5px;margin: 10px 0;font-family: inherit;font-weight: bold;line-height: 20px;color: inherit;text-rendering: optimizelegibility
+                display: block;-webkit-margin-before: 1.33em;-webkit-margin-after: 1.33em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;"><a href="Issue 1" style="color: #0088cc;text-decoration: none;">Issue #6 — fish</a></h4>
+                <div class="entry">
+                    <strong></strong><p>Tip 1</p>
+                    <div id="note">
+                        <p>bla bla bla</p>
+                    </div>
+                    <div id="vimCodeElement">
+                    </div>
+                    <div id="author" style="float: right;margin-right: 8px;">
+                        <p>Some author</p>
+                    </div>
+                </div>
+                <div class="entry">
+                    <strong></strong><p>Tip 1</p>
+                    <div id="note">
+                        <p>bla bla bla</p>
+                    </div>
+                    <div id="vimCodeElement">
+                    </div>
+                    <div id="author">
+                        <p>Some author</p>
+                    </div>
+                </div>
+                <div class="entry">
+                    <strong></strong><p>Tip 1</p>
+                    <div id="note">
+                        <p>bla bla bla</p>
+                    </div>
+                    <div id="vimCodeElement">
+                    </div>
+                    <div id="author">
+                        <p>Some author</p>
+                    </div>
+                </div>
+                <div class="entry">
+                    <strong></strong><p>Tip 1</p>
+                    <div id="note">
+                        <p>bla bla bla</p>
+                    </div>
+                    <div id="vimCodeElement">
+                    </div>
+                    <div id="author">
+                        <p>Some author</p>
+                    </div>
+                </div>
+                <div class="entry">
+                    <strong></strong><p>Tip 1</p>
+                    <div id="note">
+                        <p>bla bla bla</p>
+                    </div>
+                    <div id="vimCodeElement">
+                    </div>
+                    <div id="author">
+                        <p>Some author</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer" style="border-top: 1px solid #ddd;background-color: #fcfcfc;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;padding: 25px 0px 20px;clear: both;">
+            </div>
+        </div>
+                <center>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+                    <tr>
+                        <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                                <tr>
+                                    <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                        This email was sent to <a href="*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                        <br />
+                                        <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                        <br />
+                                        *|LIST:ADDRESSLINE|*
+                                        <br />
+                                        <br />
+                                        *|REWARDS|*
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <style type="text/css">
+                    @media only screen and (max-width: 480px){
+                        table[id="canspamBar"] td{font-size:14px !important;}
+                        table[id="canspamBar"] td a{display:block !important; margin-top:10px !important;}
+                    }
+                </style>
+            </center></body>
+</html>
